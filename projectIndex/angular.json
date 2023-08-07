@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "caviglia80.github.io": {
+    "projectIndex": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/caviglia80.github.io",
+            "outputPath": "dist/project-index",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "caviglia80.github.io:build:production"
+              "browserTarget": "projectIndex:build:production"
             },
             "development": {
-              "browserTarget": "caviglia80.github.io:build:development"
+              "browserTarget": "projectIndex:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "caviglia80.github.io:build"
+            "browserTarget": "projectIndex:build"
           }
         },
         "test": {
