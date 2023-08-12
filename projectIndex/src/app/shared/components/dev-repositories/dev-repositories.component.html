@@ -1,0 +1,73 @@
+<div class="row g-0 px-4 mb-5">
+    <div class="col">
+
+        <h2 class="titulo text-center py-5">GitHub</h2>
+
+        <div *ngIf="repos$ | async as repos" class="row text-center justify-content-center">
+            <div *ngFor="let repo of repos" class="repoItem col-lg-4 mb-3">
+
+                <div class="card">
+
+                    <div *ngFor="let lang of languageList(repo.name) | keyvalue" class="languages end-0 m-1">
+                        <span class="btn btn-outline-warning mb-1">
+                            {{ lang.key }}
+                        </span>
+                    </div>
+
+                    <div class="text-start text-xl-center ">
+                        <a href="{{ repo.html_url }}" target="_blank" rel="noreferrer">
+                            <img src="{{ repo.owner.avatar_url }}" alt="{{ repo.owner.login }}" class="m-2 start-0"
+                                width="140" height="140" role="img" title="{{ repo.owner.login }}">
+                        </a>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ truncateTitle(repo.name) }}</h5>
+                        <p class="card-text">{{ truncateDescription(repo.description) }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<!-- <div class="row g-0 px-4 mb-5">
+    <div class="col">
+
+        <h2 class="titulo text-center py-5">GitHub</h2>
+
+        <div *ngIf="repos$ | async as repos" class="row text-center justify-content-center">
+            <div *ngFor="let repo of repos" class="repoItem col-lg-4 mb-3">
+
+                <div class="card">
+
+                    <div *ngIf="languageList(repo.name) | async as languages" class="languages end-0 m-1">
+                        <span *ngFor="let lang of languages | keyvalue" class="btn btn-outline-warning mb-1">
+                            {{ lang.key }}: {{ lang.value }}
+                        </span>
+                    </div>
+
+                    <div class="text-start text-xl-center ">
+                        <a [href]="repo.html_url" target="_blank" rel="noreferrer">
+                            <img [src]="repo.owner.avatar_url" [alt]="repo.owner.login" class="m-2 start-0"
+                                width="140" height="140" role="img" [title]="repo.owner.login">
+                        </a>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ truncateTitle(repo.name) }}</h5>
+                        <p class="card-text">{{ truncateDescription(repo.description) }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
