@@ -41,19 +41,6 @@ export class DevRepositoriesComponent implements OnInit {
     }
   }
 
-  /*   public languageList(repoName: string): void {
-      this.githubService.getLanguages(repoName)
-        .subscribe(
-          response => {
-            console.log('Language Data:', response);
-          },
-          error => {
-            console.error('Error:', error);
-          }
-        );
-    } */
-
-
     public asd(repoName: string) {
       return this.githubService.getLanguages(repoName).pipe(
         map((languages: string[]) => {
